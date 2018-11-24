@@ -1,0 +1,16 @@
+{
+  "name": "cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://Nesa344.github.io/modern-profile-cards",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}

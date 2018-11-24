@@ -1,0 +1,682 @@
+.card-seven-container {
+  font-size: 16px;/* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  background: #23272A;
+  width: 100%;
+  height: 100%;
+}
+
+/* Making the card gradient animation and sizing */
+.card-seven-gradient {
+  position: relative;
+  background: rgb(2,0,36);
+  background: linear-gradient(155deg, rgba(2,0,36,1) 0%, rgba(255,0,0,1) 0%, rgba(255,171,0,1) 12%, rgba(224,255,0,1) 24%, rgba(0,255,8,1) 36%, rgba(0,228,255,1) 48%, rgba(0,5,255,1) 60%, rgba(254,0,231,1) 72%, rgba(255,0,0,1) 84%, rgba(255,162,0,1) 96%);
+  width: 19em;
+  height: 32em;
+  animation: gradient-anim 15s linear infinite;
+  margin: 4em auto;/* gap between cards can be changed here*/
+}
+
+/* Adding blur to gradient */
+.card-seven-gradient::before {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position: absolute;
+  filter: blur(13px);
+}
+
+/* Card background, sizing and positioning */
+.card-seven {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 18.7em;
+  height: 31.7em;
+  background: rgb(42,42,42);
+  background: linear-gradient(352deg, rgba(42,42,42,1) 0%, rgba(0,0,0,1) 100%);text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Username margin */
+.card-seven h2 {
+ margin: 1em 0 0 0;
+}
+
+/* Profile image border and sizing */
+.card-seven img {
+  width: 9.5em;
+  height: 9.5em;
+  border: solid #fff 2px;
+  border-radius: 50%;
+  margin-top: 2em;
+}
+
+/* Positioning open button */
+.card-seven-top .card-seven-btn {
+  position: absolute;
+  bottom: 7.6em;
+}
+
+/* Middle part of the card styles */
+.card-seven-middle {
+  box-sizing: border-box;
+  padding: 1em 1.5em;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; 
+}
+
+/* About text styles */
+.card-seven-middle p {
+  line-height: 1.6em;
+  margin-bottom: 2em;
+}
+
+/* Styles for the open and close buttons */
+.card-seven-btn, 
+.card-seven-close-btn {
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2em;
+  padding: 1em;
+  border: none;
+  border-radius: 50%;
+  width: 3.3em;
+  height: 3.3em;
+  cursor: pointer;
+  transition: 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Styles for the open and close buttons when hovered over */
+.card-seven-btn:hover, 
+.card-seven-close-btn:hover {
+  background-color: #727272;
+  color: #fff;
+}
+
+/* Positioning close button */
+.card-seven-middle 
+.card-seven-close-btn {
+  position: absolute;
+  bottom: 1.25em;
+}
+
+/* media icons position and size */
+.card-seven-middle a {
+  font-size: 2em;
+  margin: 0 0.4em;;
+}
+
+/* media icons color */
+.card-seven-middle a:nth-child(1) {
+  color: #3b5998;
+}
+.card-seven-middle a:nth-child(2) {
+  color:  #cd486b;
+}
+.card-seven-middle a:nth-child(3) {
+  color: #fff;
+}
+.card-seven-middle a:nth-child(4) {
+  color: #0057e7;
+}
+
+/* Top and bottom height */
+.card-seven-top, 
+.card-seven-bottom {
+  height: 50%;
+  transition: 0.7s;
+}
+
+/* views, followers and likes positioning */
+.seven-stats {
+  position: absolute;
+  bottom: 0.9em;
+  width: 100%;
+}
+
+.seven-views, 
+.seven-followers, 
+.seven-likes {
+  display: inline-block;
+  margin: 0 0.9em;
+}
+
+.seven-icon {
+  font-size: 1.3em;
+}
+
+/* animation styles that are added when the open button is pressed */
+.fadeIn {
+  animation: fadeIn 1.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+
+/* Gradient border animation */
+@keyframes gradient-anim {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 18.75em 31.25em;
+  }
+  100% {
+    background-position: 0.1em 0.1em;
+  } 
+}
+
+/* animations when the open button is pressed */
+@keyframes fadeOut {
+ from {
+   opacity: 1;
+ }
+ to {
+   opacity: 0;
+ }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 14px and 13px when the screen hits the size of 350px and 300px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 350px) {
+  .card-seven-container {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .card-seven-container {
+    font-size: 13px;
+  }
+}
+
+.card-eight-container {
+  font-size: 16px;
+  /* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  background: #000;
+  width: 100%;
+  height: 100%;
+}
+
+/* Making the card gradient animation and sizing */
+.card-eight-gradient {
+  position: relative;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(155deg, rgba(2, 0, 36, 1) 0%, rgba(255, 0, 0, 1) 0%, rgba(255, 171, 0, 1) 12%, rgba(224, 255, 0, 1) 24%, rgba(0, 255, 8, 1) 36%, rgba(0, 228, 255, 1) 48%, rgba(0, 5, 255, 1) 60%, rgba(254, 0, 231, 1) 72%, rgba(255, 0, 0, 1) 84%, rgba(255, 162, 0, 1) 96%);
+  width: 30em;
+  height: 22em;
+  animation: gradient-anim 15s linear infinite;
+  margin: 9em auto;
+  /* gap between cards can be changed here*/
+}
+
+/* Adding blur to gradient */
+.card-eight-gradient::before {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position: absolute;
+  filter: blur(13px);
+}
+
+/* Card background, sizing and positioning */
+.card-eight {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 29.7em;
+  height: 21.7em;
+  background: rgb(22, 22, 22);
+  background: linear-gradient(90deg, rgb(17, 17, 17) 0%, rgba(0, 0, 0, 1) 100%);
+  text-align: center;
+  color: #fff;
+}
+
+/* Username margin */
+.card-eight h2 {
+  margin: 1em 0 0 0;
+}
+
+/* Profile image border and sizing */
+.card-eight img {
+  width: 10em;
+  height: 10em;
+  border: solid #fff 2px;
+  border-radius: 50%;
+  margin-top: 2em;
+}
+
+/* Middle part of the card styles */
+.card-eight-middle {
+  box-sizing: border-box;
+  padding: 1em 1.5em;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+/* About text styles */
+.card-eight-middle p {
+  line-height: 1.6em;
+  margin-bottom: 2em;
+}
+
+/* Styles for the open and close buttons */
+.card-eight-btn,
+.card-eight-close-btn {
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2em;
+  padding: 1em;
+  border: none;
+  border-radius: 50%;
+  width: 3.3em;
+  height: 3.3em;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  left: 50%;
+  bottom: -2em;
+  transform: translateX(-50%);
+}
+
+/* Styles for the open and close buttons when hovered over */
+.card-eight-btn:hover,
+.card-eight-close-btn:hover {
+  background-color: #727272;
+  color: #fff;
+}
+
+/* media icons position and size */
+.card-eight-middle a {
+  font-size: 2em;
+  margin: 0 0.7em;
+  ;
+}
+
+/* media icons color */
+.card-eight-middle a:nth-child(1) {
+  color: #3b5998;
+}
+
+.card-eight-middle a:nth-child(2) {
+  color: #cd486b;
+}
+
+.card-eight-middle a:nth-child(3) {
+  color: #fff;
+}
+
+.card-eight-middle a:nth-child(4) {
+  color: #0057e7;
+}
+
+/* Left and right height & width*/
+.eight-info,
+.eight-stats {
+  height: 100%;
+  transition: 0.7s;
+}
+
+.eight-info {
+  float: left;
+  width: 60%;
+}
+
+.eight-stats {
+  float: right;
+  width: 40%;
+}
+
+.eight-stats p {
+  margin: 0;
+}
+
+/* views, followers and likes positioning */
+.eight-views,
+.eight-followers,
+.eight-likes {
+  display: block;
+  margin: 1.2em 0;
+}
+
+.eight-icon {
+  font-size: 1.3em;
+}
+
+/* animation styles that are added when the open button is pressed */
+.fadeIn {
+  animation: fadeIn 1.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+
+/* Gradient border animation */
+@keyframes gradient-anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 18.75em 31.25em;
+  }
+
+  100% {
+    background-position: 0.1em 0.1em;
+  }
+}
+
+/* animations when the open button is pressed */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 13px and 12px when the screen hits the size of 550px and 450px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 550px) {
+  .card-eight-container {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card-eight-container {
+    font-size: 12px;
+    width: 90%;
+  }
+
+  .card-eight-gradient {
+    width: 100%;
+  }
+
+  .card-eight {
+    width: 98%;
+  }
+}
+
+.card-nine-container {
+  font-size: 16px;
+  /* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  background: #f5f5f5;
+  width: 100%;
+  height: 100%;
+}
+
+/* Making the card gradient animation and sizing */
+.card-nine-gradient {
+  position: relative;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(155deg, rgba(2, 0, 36, 1) 0%, rgba(255, 0, 0, 1) 0%, rgba(255, 171, 0, 1) 12%, rgba(224, 255, 0, 1) 24%, rgba(0, 255, 8, 1) 36%, rgba(0, 228, 255, 1) 48%, rgba(0, 5, 255, 1) 60%, rgba(254, 0, 231, 1) 72%, rgba(255, 0, 0, 1) 84%, rgba(255, 162, 0, 1) 96%);
+  width: 19em;
+  height: 32em;
+  animation: gradient-anim 15s linear infinite;
+  margin: 4em auto;
+  /* gap between cards can be changed here*/
+}
+
+/* Adding blur to gradient */
+.card-nine-gradient::before {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  position: absolute;
+  filter: blur(13px);
+}
+
+/* Making the card gradient animation and sizing */
+.card-nine {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18.7em;
+  height: 31.7em;
+  background: rgb(232, 232, 232);
+  background: linear-gradient(3deg, rgb(212, 212, 212) 0%, rgb(238, 238, 238) 81%);
+  text-align: center;
+  color: #000;
+  overflow: hidden;
+}
+
+/* Username margin */
+.card-nine h2 {
+  margin: 1em 0 0 0;
+}
+
+/* Profile image border and sizing */
+.card-nine img {
+  width: 9.5em;
+  height: 9.5em;
+  border: solid #000 2px;
+  border-radius: 50%;
+  margin-top: 2em;
+}
+
+/* Positioning open button */
+.card-nine-top .card-nine-btn {
+  position: absolute;
+  bottom: 7.6em;
+}
+
+/* Middle part of the card styles */
+.card-nine-middle {
+  box-sizing: border-box;
+  padding: 1em 1.5em;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+/* About text styles */
+.card-nine-middle p {
+  line-height: 1.6em;
+  margin-bottom: 2em;
+}
+
+/* Styles for the open and close buttons */
+.card-nine-btn,
+.card-nine-close-btn {
+  background-color: #727272;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 1em;
+  border: none;
+  border-radius: 50%;
+  width: 3.3em;
+  height: 3.3em;
+  cursor: pointer;
+  transition: 0.3s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Styles for the open and close buttons when hovered over */
+.card-nine-btn:hover 
+.card-nine-close-btn:hover {
+  background-color: #fff;
+  color: #727272;
+}
+
+/* Positioning close button */
+.card-nine-middle 
+.card-nine-close-btn {
+  position: absolute;
+  bottom: 1.25em;
+}
+
+/* media icons position and size */
+.card-nine-middle a {
+  font-size: 2em;
+  margin: 0 0.4em;
+  ;
+}
+
+/* media icons color */
+.card-nine-middle a:nth-child(1) {
+  color: #3b5998;
+}
+
+.card-nine-middle a:nth-child(2) {
+  color: #cd486b;
+}
+
+.card-nine-middle a:nth-child(3) {
+  color: #000;
+}
+
+.card-nine-middle a:nth-child(4) {
+  color: #0057e7;
+}
+
+/* Top and bottom height */
+.card-nine-top,
+.card-nine-bottom {
+  height: 50%;
+  transition: 0.7s;
+}
+
+/* views, followers and likes positioning */
+.nine-stats {
+  position: absolute;
+  bottom: 0.9em;
+  width: 100%;
+}
+
+.nine-views,
+.nine-followers,
+.nine-likes {
+  display: inline-block;
+  margin: 0 0.9em;
+}
+
+.nine-icon {
+  font-size: 1.3rem;
+}
+
+/* animation styles that are added when the open button is pressed */
+.fadeIn {
+  animation: fadeIn 1.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+
+/* Gradient border animation */
+@keyframes gradient-anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 18.75em 31.25em;
+  }
+
+  100% {
+    background-position: 0.1em 0.1em;
+  }
+}
+
+/* animations when the open button is pressed */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 14px and 13px when the screen hits the size of 350px and 300px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 350px) {
+  .card-nine-container {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .card-nine-container {
+    font-size: 13px;
+  }
+}

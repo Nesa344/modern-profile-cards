@@ -1,0 +1,892 @@
+/* Setting the font adding margin to card and font size */
+.card-one-container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; /* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+  display: inline-block;
+}
+
+/* Sizing everything in the card so it doesnt change size when padding is added */
+.card-one * {
+  box-sizing: border-box;
+}
+
+/* Centering the profile name and adding margin */
+.card-one h2 {
+  text-align: center;
+  margin-top: 0.6em;
+}
+
+/* Styles for the icons */
+.one-icon {
+  color: #0F75EC;
+  display: inline;
+  font-size: 1.4em;
+}
+
+/* Styles for the card and shadow*/
+.card-one {
+  width: 25.6em;
+  height: 37.5em;
+  position: relative;
+  overflow: hidden;
+  margin: 2em 0.5em;
+  -webkit-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* Adding background do card menu and positioning */
+.card-one-menu {
+  position: absolute;
+  left: -25.6em;
+  width: 25.6em;
+  height: 37.5em;
+  background-image: url(../images/forest.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #99AAB5;
+  transition: 0.5s;
+  z-index: 9;
+}
+
+/* Styling the black overlay */
+.card-one-overlay {
+  position: absolute;
+  width: 25.6em;
+  height: 37.5em;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2em 2em;
+  line-height: 1.5em;
+}
+
+.card-one-overlay p {
+  font-size: 1.1em;
+}
+
+/* Adding margin to X button */
+.one-menu-btn-close {
+  margin-bottom: 3em;
+}
+
+.one-line-close {
+  background-color: #fff;
+  width: 1.8em;
+  height: 0.1em;
+  cursor: pointer;
+}
+
+/* Making The X button */
+.one-line-close:nth-child(1) {
+  transform: rotate(45deg) translateY(1px);
+}
+
+.one-line-close:nth-child(2) {
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+.card-one-overlay p:nth-child(3) {
+  margin-bottom: 4em;
+}
+
+/* Styles for the main buttons */
+.card-one-btn {
+  background-color: #0F75EC;
+  padding: 0.9em 1.7em;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5em;
+  border-radius: 0.9em;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Styles when the buttons are hovered */
+.card-one-btn:hover {
+  background-color: #fff;
+  color: #0F75EC;
+}
+
+/* Adding background to the top part of the card */
+.card-one-top {
+  background-image: url(../images/forest.jpg);
+  background-position-y: 15em;
+  background-size: cover;
+  width: 100%;
+  height: 15em;
+}
+
+/* Menu button styles */
+.one-menu-btn {
+  padding: 1em;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.one-line {
+  background-color: #1c1c1c;
+  width: 1.8em;
+  height: 0.1em;
+  margin-bottom: 0.4em;
+}
+
+/* Options Button styles */
+.one-options-btn {
+  padding: 1em 1.5em 0 0;
+  float: right;
+  cursor: pointer;
+}
+
+.one-circle {
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background-color: #1c1c1c;
+  margin-bottom: 0.2em;
+}
+
+/* Options Menu */
+.card-one-options {
+  position: absolute;
+  top: 3.4em;
+  right: 0.6em;
+  width: 12.5em;
+  background-color: #0F75EC;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+
+/* Options menu when opened */
+.card-one-options-open {
+  height: 9.7em;
+}
+
+/* Options Links */
+.card-one-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-one-options li {
+  padding: 1em 2em;
+  border-bottom: solid 1px #1c1c1c;
+}
+
+.card-one-options a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-one-options a:hover {
+  text-decoration: underline;
+}
+
+/* Two slanting parts that make the angle in the card */
+.card-one-top::before {
+  content: ' ';
+  width: 16.2em;
+  height: 5.8em;
+  position: absolute;
+  top: 9.6em;
+  left: -7.3em;
+  transform: rotate(25deg);
+  background: #0e0e0e;
+}
+
+.card-one-top::after {
+  content: ' ';
+  width: 16.2em;
+  height: 5.8em;
+  position: absolute;
+  top: 9.6em;
+  right: -7.3em;
+  transform: rotate(-25deg);
+  background-color: #0e0e0e;
+}
+
+/* Middle part of the card */
+.card-one-middle {
+  color: #fff;
+  padding: 0 2em 2.5em 2em;
+  background: linear-gradient(0deg, rgba(52, 52, 52, 1) 0%, rgba(33, 33, 33, 1) 22%, rgba(14, 14, 14, 1) 65%);
+}
+
+/* text buttons and icons in middle */
+.card-one-middle p,
+.card-one-bottom p {
+  display: inline;
+}
+
+.one-location {
+  margin-top: 1em;
+  ;
+}
+
+.card-one-middle .card-one-btn {
+  float: right;
+}
+
+/* Profile styles */
+.one-profile {
+  text-align: center;
+  position: relative;
+  top: -6.2em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  margin-bottom: -5em;
+}
+
+/* profile image size and border */
+.one-profile img {
+  width: 9.3em;
+  height: 9.3em;
+  border: 2px #0F75EC solid;
+  border-radius: 50%;
+}
+
+.one-profile-info {
+  display: inline-block;
+}
+
+.one-profile-info p {
+  color: #99AAB5;
+}
+
+/* Bottom part of the card */
+.card-one-bottom {
+  text-align: center;
+  width: 100%;
+  padding: 1.5em 1em;
+  background-color: #fff;
+} 
+
+/* views, followers and likes icons numbers and text */
+.one-views,
+.one-followers,
+.one-likes {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 14px and 11px when the screen hits the size of 450px and 380px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 450px) {
+  .card-one-container {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-one-container {
+    font-size: 12px;
+  }
+}
+
+/* Setting the font adding margin to card and font size */
+.card-three-container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;/* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+  display: inline-block;
+}
+
+/* Sizing everything in the card so it doesnt change size when padding is added */
+.card-three * {
+  box-sizing: border-box;
+}
+
+/* Styles for the icons */
+.three-icon {
+  color: #0F75EC;
+  display: inline;
+  font-size: 1.4em;
+}
+
+/* Styles for the card */
+.card-three {
+  width: 56em;
+  height: 27.5em;
+  position: relative;
+  margin: 3.5em 0;/* gap between cards can be changed here*/
+  -webkit-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  background: #fff;
+}
+
+/* Adding background to top part of the card and sizing */
+.card-three-top {
+  width: 100%;
+  height: 50%;
+  background-image: url(../images/forest.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Making the black overlay on the background image */
+.card-three-overlay {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2em 2em;
+  font-size: 1em;
+  z-index: 3;
+}
+
+/* Positioning user profile, sizing the image and username*/
+.three-profile {
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 19.5%;
+  transform: translate(-50%, -50%);
+}
+
+.three-profile img {
+  width: 11.8em;
+  height: 11.8em;
+  border: 3px #0F75EC solid;
+  border-radius: 50%;
+  margin: 0 2em 0 2em;
+}
+
+.three-profile h2 {
+  color: #fff;
+  font-size: 2.5em;
+  margin: 1em 0 0.5em 0;
+}
+
+/* Positioning profile info */
+.three-profile-info {
+  display: inline-block;
+  position: absolute;
+  top: 60%;
+  left: 33%;
+}
+
+.three-profile-info p {
+  color: #99AAB5;
+  font-size: 1.2em;
+}
+
+.three-job {
+  margin-bottom: 0.5em;
+}
+
+.card-three-top-buttons {
+  float: right;
+}
+
+/* Positioning all the buttons */
+.card-three-top-buttons .card-three-btn {
+  display: block;
+  margin-bottom: 2em;
+}
+
+/* Making paragraphs inline */
+.three-profile-info p,
+.three-stats p {
+  display: inline;
+}
+
+/* Styles for the buttons */
+.card-three-btn {
+  background-color: #0F75EC;
+  padding: 0.8em 2.7em;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5em;
+  border-radius: 1.8em;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Styles for the buttons when hovered over */
+.card-three-btn:hover {
+  background-color: #fff;
+  color: #0F75EC;
+}
+
+/* Sizing bottom part of the card */
+.card-three-bottom {
+  width: 100%;
+  height: 50%;
+}
+
+/* Sizing and positioning bottom card elements */
+.three-stats,
+.three-about {
+  display: inline-block;
+  height: 100%;
+}
+
+.three-stats {
+  float: left;
+  text-align: center;
+  position: relative;
+  width: 40%;
+}
+
+.three-views,
+.three-followers,
+.three-likes {
+  display: inline-block;
+  margin: 6.5em 0.7em 0 0.7em;
+}
+
+.three-stats .card-three-btn {
+  display: none;
+}
+
+/* Styles for the about section */
+.three-about {
+  float: right;
+  background: linear-gradient(to right, #000, #2b2b2b);
+  color: #99AAB5;
+  padding: 1.5em 2em;
+  position: relative;
+  width: 60%;
+}
+
+.three-about p {
+  line-height: 1.5em;
+  font-size: 1.1em;
+}
+
+/* Styles for circular button */
+.three-about .card-three-btn {
+  position: absolute;
+  bottom: -1.5em;
+  right: 1.2em;
+  padding: 0.7em 1em;
+  border-radius: 50%;
+  font-size: 2em;
+  margin: 0 0.5em;
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these media queries will make it shrink from the 16px font size to 14px and 11px when the screen hits the size of 950px and 510px */
+
+/* But if the font size is changed to something other than the default 16px then the 'max-width' and 'card-container' font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 950px) {
+  .card-three-container {
+    font-size: 14px;
+  }
+}
+
+/* Rearanging the card for smaller screens */
+@media screen and (max-width: 850px) {
+  .card-three {
+    height: 41.2em;
+    width: 35em;
+  }
+
+  .card-three-top {
+    height: 60%;
+  }
+
+  .card-three-overlay {
+    height: 60%;
+  }
+
+  .three-profile {
+    top: 8.7em;
+    left: 50%;
+  }
+
+  .three-profile-info {
+    top: 19em;
+    left: 1.8em;
+  }
+
+  .card-three-top-buttons .card-three-btn {
+    display: inline;
+    position: relative;
+    top: 16em;
+    right: 0;
+  }
+
+  .three-stats,
+  .three-about {
+    display: block;
+    width: 100%;
+  }
+
+  .three-stats {
+    height: 40%;
+  }
+
+  .three-views,
+  .three-followers,
+  .three-likes {
+    display: inline-block;
+    margin: 2.5em 1em 0 1em;
+  }
+
+  .three-about {
+    height: 50%;
+  }
+}
+
+/* Rearanging the card for smallest screens */
+@media screen and (max-width: 550px) {
+  .card-three {
+    height: 33.8em;
+  }
+
+  .card-three-top,
+  .card-three-overlay {
+    height: 75%;
+  }
+
+  .three-profile {
+    top: 7.5em;
+  }
+
+  .three-profile-info {
+    top: 15.2em;
+    left: 1.8em;
+  }
+
+  .card-three-bottom {
+    height: 25%;
+    padding-bottom: 2em;
+  }
+
+  .three-profile img {
+    width: 9.3em;
+    height: 9.3em;
+  }
+
+  .three-views,
+  .three-followers,
+  .three-likes {
+    margin: 1.5em 1em 0 1em;
+  }
+
+  .three-about {
+    display: none;
+  }
+
+  .three-stats .card-three-btn {
+    position: absolute;
+    bottom: -6.6em;
+    right: 0;
+    padding: 1.1em 1.5em;
+    border-radius: 50%;
+    font-size: 1.2em;
+    margin: 0 0.5em;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .card-three-container {
+    font-size: 11px;
+    width: 90%;
+  }
+
+  .card-three {
+    width: 100%;
+  }
+  .card-three-top-buttons .card-three-btn {
+    margin: 0 0.2em;
+    padding: 0.8em 2em;
+  }
+}
+
+/* Setting the font and font size */
+.card-two-container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;/* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+  display: inline-block;
+}
+
+/* Sizing everything in the card so it doesnt change size when padding is added */
+.card-two * {
+  box-sizing: border-box;
+}
+
+/* Centering the profile name and adding margin */
+.card-two h2 {
+  text-align: center;
+  margin-top: 0.6em;
+}
+
+/* Styles for the icons */
+.two-icon {
+  color: #0F75EC;
+  display: inline;
+  font-size: 1.4em;
+}
+
+/* Styles for the card and shadow*/
+.card-two {
+  width: 25.6em;
+  height: 37.5em;
+  position: relative;
+  overflow: hidden;
+  margin: 2em 0.5em;/* gap between cards can be changed here*/
+  -webkit-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* Adding background do card menu and positioning */
+.card-two-menu {
+  position: absolute;
+  left: -25.6em;
+  width: 25.7em;
+  height: 37.5em;
+  background-size: cover;
+  color: #99AAB5;
+  transition: 0.5s;
+  z-index: 9;
+  background: linear-gradient(to right, #000, #2b2b2b);
+  padding: 2em 2em;
+}
+
+.card-two-menu p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+/* Adding margin to X button */
+.two-menu-btn-close {
+  margin-bottom: 3em;
+}
+
+.two-line-close {
+  background-color: #fff;
+  width: 1.8em;
+  height: 0.1em;
+  cursor: pointer;
+}
+
+/* Making The X button */
+.two-line-close:nth-child(1) {
+  transform: rotate(45deg) translateY(1px);
+}
+
+.two-line-close:nth-child(2) {
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+.card-two-menu p:nth-child(3) {
+  margin-bottom: 4em;
+}
+
+/* Styles for the main buttons */
+.card-two-btn {
+  background-color: #0F75EC;
+  padding: 0.9em 1.7em;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5em;
+  border-radius: 1.8em;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Styles when the buttons are hovered */
+.card-two-btn:hover {
+  background-color: #fff;
+  color: #0F75EC;
+}
+
+/* Adding background to the top part of the card */
+.card-two-top {
+  background-image: url(../images/forest.jpg);
+  background-position-y: 15em;
+  background-size: cover;
+  width: 100%;
+  height: 15em;
+}
+
+/* Menu button styles */
+.two-menu-btn {
+  padding: 1em;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.two-line {
+  background-color: #1c1c1c;
+  width: 1.8em;
+  height: 0.1em;
+  margin-bottom: 0.4em;
+}
+
+/* Options Button styles */
+.two-options-btn {
+  padding: 1em 1.5em 0 0;
+  float: right;
+  cursor: pointer;
+}
+
+/* Options Menu */
+.card-two-options {
+  position: absolute;
+  top: 3.4em;
+  right: 0.6em;
+  width: 12.5em;
+  background-color: #0F75EC;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+
+.two-circle {
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background-color: #1c1c1c;
+  margin-bottom: 0.2em;
+}
+
+/* Options menu when opened */
+.card-two-options-open {
+  height: 9.7em;
+}
+
+/* Options Links */
+.card-two-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-two-options li {
+  padding: 1em 2em;
+  border-bottom: solid 1px #1c1c1c;
+}
+
+.card-two-options a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card-two-options a:hover {
+  text-decoration: underline;
+}
+
+/* Slanting part that makes the angle in the card */
+.card-two-top::before {
+  content: ' ';
+  width: 28.5em;
+  height: 6.25em;
+  position: absolute;
+  top: 11.4em;
+  left: -1.3em;
+  transform: rotate(10deg);
+  background: linear-gradient(to right, #000, #2b2b2b);
+}
+
+/* Middle part of the card */
+.card-two-middle {
+  color: #fff;
+  padding: 0em 2em 5.5em 2em;
+  background: linear-gradient(to right, #000, #2b2b2b);
+}
+
+/* text buttons and icons in middle */
+.card-two-middle p,
+.card-two-bottom p {
+  display: inline;
+}
+
+.two-location {
+  margin-top: 1em;
+}
+
+.card-two-middle .card-two-btn {
+  float: right;
+  padding: 1em 2.5em;
+}
+
+/* Profile styles */
+.two-profile {
+  text-align: center;
+  position: relative;
+  top: -7.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: -5em;
+}
+
+/* profile image size and border */
+.two-profile img {
+  width: 9.3em;
+  height: 9.3em;
+  border: 2px #0F75EC solid;
+  border-radius: 50%;
+}
+
+.two-profile-info {
+  display: inline-block;
+  margin-top: -3em;
+}
+
+/* Slanting Bottom part of the card */
+.card-two-bottom {
+  width: 29em;
+  height: 13.5em;
+  position: absolute;
+  bottom: -3.8em;
+  left: -2.1em;
+  background-color: #fff;
+  transform: rotate(10deg);
+}
+
+/* Card bottom container which contains the views, follwers, and likes*/
+.card-two-bottom-container {
+  transform: rotate(-10deg);
+  width: 25.6em;
+  height: 7.5em;
+  background: #fff;
+  text-align: center;
+  padding: 1.5em 1em;
+  position: absolute;
+  bottom: 3.8em;
+  left: 2em;
+}
+
+/* views, followers and likes icons numbers and text */
+.two-views,
+.two-followers,
+.two-likes {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 14px and 11px when the screen hits the size of 450px and 350px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 450px) {
+  .card-two-container {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-two-container {
+    font-size: 12px;
+  }
+}

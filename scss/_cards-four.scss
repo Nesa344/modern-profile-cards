@@ -1,0 +1,1057 @@
+.card-ten-container {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  font-size: 16px;/* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+}
+
+/* Sizing everything in the card so it doesnt change size when padding is added */
+.card-ten * {
+  box-sizing: border-box;
+}
+
+/* Styles for the card and shadow*/
+.card-ten {
+  width: 23em;
+  height: 33em;
+  position: relative;
+  overflow: hidden;
+  margin: 1em;/* gap between cards can be changed here*/
+  -webkit-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* Profile name size and margin */
+.card-ten h2 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0.5em;
+}
+
+/* left and right parts of the card sizing and centering text */
+.card-ten-left,
+.card-ten-right {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  transition: 0.5s;
+}
+
+/* Adding background image to left part of the card and positioning*/
+.card-ten-left {
+  background-image: url(../images/profile.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* Making the black overlay on background image */
+.card-ten-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2.5em 1em;
+}
+
+/* Profile image size and border */
+.ten-profile-img {
+  height: 11em;
+  width: 11em;
+  border: 2px solid #FC7D22;
+  border-radius: 50%;
+}
+
+/* paragraph below username color and margin */
+.card-ten-left p {
+  color: #FC7D22;
+  margin: 0;
+}
+
+/* Two buttons in bottom left size and position */
+.ten-buttons-left {
+  position: absolute;
+  bottom: 0.6em;
+  left: 0.6em;
+  width: 9.5em;
+  height: 7em;
+}
+
+/* Styles for buttons(border,padding...) */
+.card-ten-btn {
+  border: 3px solid #FC7D22;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: 0.3s;
+  display: block;
+  margin: 0.7em;
+}
+
+/* Styles for arrow button */
+.ten-arrow-btn {
+  border: 4px solid #FC7D22;
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  color: #fff;
+  padding-top: 0.2em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Positioning left arrow button */
+.ten-arrow-btn-left {
+  position: absolute;
+  bottom: 0.9em;
+  right: 0.9em;
+}
+
+/* Background for buttons when hovered over */
+.card-ten-btn:hover,
+.ten-arrow-btn:hover {
+  background: rgba(204, 204, 204, 0.3);
+}
+
+/* Right part of the card background and positioning */
+.card-ten-right {
+  background-color: #1c1c1c;
+  left: 23em;
+  top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* scrollbar width */
+.card-ten-right::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+/* scrollbar track background color */
+.card-ten-right::-webkit-scrollbar-track {
+  background: #C5C6C7;
+}
+
+/* Scrollbar thumb background color */
+.card-ten-right::-webkit-scrollbar-thumb {
+  background: #FC7D22;
+}
+
+/* background color and size for views, followers and likes section */
+.ten-stats {
+  background: #1F2833;
+  width: 100%;
+  padding: 1.5em 0.5em;
+}
+
+/* paragraph color in stats section */
+.ten-stats p {
+  color: #C5C6C7;
+  font-size: 1.3em;
+  margin: 0 0 1em 0;
+}
+
+/* views, follwers and likes margin */
+.ten-views,
+.ten-followers,
+.ten-likes {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+/* icon color and size */
+.ten-icon {
+  color: #FC7D22;
+  font-size: 1.6em;
+}
+
+/* Skills section background and text color */
+.ten-skills {
+  background-color: #0B0C10;
+  padding: 1rem 0.5rem;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+/* Making a grid for the skills */
+.ten-skill {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+
+/* Full progress bar */
+.ten-progress {
+  width: 14em;
+  height: 1.5em;
+  background: #C5C6C7;
+  display: inline-block;
+}
+
+/* Progress value */
+.ten-progress-value {
+  background-color: #FC7D22;
+  height: 1.5em;
+}
+
+/* Adding percentage to every skill(how much the bar is filled) */
+.ten-val-1 {width: 95%;}
+
+.ten-val-2 {width: 90%;}
+
+.ten-val-3 {width: 85%;}
+
+.ten-val-4 {width: 90%;}
+
+.ten-val-5 {width: 83%;}
+
+.ten-val-6 {width: 95%;}
+
+/* About section padding and background */
+.ten-about {
+  padding: 1em;
+  background: #1F2833;
+}
+
+/* About text size and color */
+.ten-about p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #C5C6C7;
+}
+
+/* My work section padding and background */
+.ten-work {
+  background: #0B0C10;
+  padding: 1em 0 1em 0;
+}
+
+/* Styling for projec(border,centering,padding...) */
+.ten-project {
+  width: 20em;
+  height: 12.4em;
+  border: #FC7D22 solid 2px;
+  margin: 1rem auto;
+  text-align: left;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Adding padding */
+.ten-project .card-ten-overlay {
+  padding: 0 1em 1em 1em;
+}
+
+/* Adding background when hovered over */
+.ten-project:hover .card-ten-overlay {
+  background-color: rgba(97, 97, 97, 0.8);
+  cursor: pointer;
+}
+
+/* Styling the paragraph in the project */
+.ten-project p {
+  color: #C5C6C7;
+  margin: 0 0 1.5em 0;
+  text-align: center;
+}
+
+/* Aligning the project likes and vews to left and right */
+.ten-project-likes {
+  float: left;
+}
+
+.ten-project-views {
+  float: right;
+}
+
+/* Adding background images to project */
+.ten-project-1 {
+  background: url(../images/project1.jpg);
+}
+
+.ten-project-2 {
+  background: url(../images/project2.jpg);
+}
+
+.ten-project-3 {
+  background: url(../images/project3.jpg);
+}
+
+/* positioning the right arrow button and follow button */
+.ten-buttons-right {
+  padding: 1em;
+  background-color: #1F2833;
+  position: absolute;
+  right: 0;
+  width: 22.4em;
+  transition: 0.5s;
+}
+
+.ten-buttons-right a {
+  display: inline-block;
+}
+
+.ten-buttons-right a:nth-child(2) {
+  float: right;
+  padding: 0.5em 2em;
+}
+
+.ten-arrow-btn-right {
+  float: left;
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 14px and 12px when the screen hits the size of 400px and 350px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 400px) {
+  .card-ten-container {
+    font-size: 14px;
+  }
+  .card-ten {
+    margin-top: 3rem;
+  }
+  .ten-buttons-left {
+    margin-bottom: 2em;
+  }
+  .ten-buttons-right {
+    width: 22.3em;
+  }
+}
+@media screen and (max-width: 350px) {
+  .card-ten-container {
+    font-size: 12px;
+  }
+  .ten-buttons-right {
+    width: 22.2em;
+  }
+  .ten-project p {
+    margin: 0;
+  }
+}
+
+.card-twelve-container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.card-twelve * {
+  box-sizing: border-box;
+}
+
+.card-twelve {
+  width: 55em;
+  height: 30em;
+  position: relative;
+  overflow: hidden;
+  margin: 2em 1rem;
+  -webkit-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+.card-twelve h2 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0.2em;
+}
+
+.card-twelve-middle {
+  background-color: #0B0C10;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.twelve-work {
+  background: #0B0C10;
+  padding: 1em;
+  margin: 0 auto 2em auto;
+}
+
+.twelve-project {
+  width: 16em;
+  height: 13em;
+  border: #FC7D22 solid 2px;
+  margin: 0.5em;
+  text-align: left;
+  padding: 0.5em;
+  position: relative;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-twelve-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1em;
+}
+
+.twelve-project:hover .card-twelve-overlay {
+  background-color: rgba(97, 97, 97, 0.8);
+  cursor: pointer;
+}
+
+.twelve-project p {
+  color: #C5C6C7;
+  margin: 0 0 1.5em 0;
+  text-align: center;
+}
+
+.twelve-project-likes {
+  float: left;
+}
+
+.twelve-project-views {
+  float: right;
+}
+
+.twelve-project-1 {
+  background: url(../images/project1.jpg);
+}
+
+.twelve-project-2 {
+  background: url(../images/project2.jpg);
+}
+
+.twelve-project-3 {
+  background: url(../images/project3.jpg);
+}
+
+.twelve-icon {
+  color: #FC7D22;
+  font-size: 1.4em;
+}
+
+.twelve-skills {
+  background-color: #0B0C10;
+  color: #fff;
+  margin-left: 4em;
+  float: right;
+}
+
+.twelve-skill {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+
+.twelve-skill-value {
+  margin: 0.3em;
+}
+
+.twelve-progress {
+  width: 14em;
+  height: 1em;
+  background: #C5C6C7;
+  display: inline-block;
+}
+
+.twelve-progress-value {
+  background-color: #FC7D22;
+  height: 1em;
+}
+
+.twelve-val-1 {width: 95%;}
+
+.twelve-val-2 {width: 90%;}
+
+.twelve-val-3 {width: 85%;}
+
+.twelve-val-4 {width: 90%;}
+
+.twelve-val-5 {width: 83%;}
+
+.twelve-val-6 {width: 93%;}
+
+.twelve-val-7 {width: 78%;}
+
+.twelve-val-8 {width: 92%;}
+
+.twelve-val-9 {width: 87%;}
+
+.twelve-val-10 {width: 98%;}
+
+.twelve-val-11 {width: 82%;}
+
+.twelve-val-12 {width: 80%;}
+
+.card-twelve-left,
+.card-twelve-right {
+  position: absolute;
+  transition: 0.5s;
+}
+
+.card-twelve-left {
+  width: 34.5em;
+  height: 50em;
+  background-color: #1F2833;
+  z-index: 3;
+  top: -6em;
+  left: -7em;
+  transform: rotate(-34deg);
+}
+
+.card-twelve-left-content::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+.card-twelve-left-content::-webkit-scrollbar-track {
+  background: #cccccc;
+}
+
+.card-twelve-left-content::-webkit-scrollbar-thumb {
+  background: #FC7D22;
+}
+
+.card-twelve-left-content {
+  width: 37.5em;
+  height: 32em;
+  position: absolute;
+  z-index: 2;
+  top: 9em;
+  right: -9em;
+  transform: rotate(34deg);
+  text-align: left;
+}
+
+.twelve-info {
+  margin: 2em 0em 0em 3.5em;
+  font-size: 1.2em;
+}
+
+.twelve-info p {
+  color: #FC7D22;
+  margin: 0.5em;
+}
+
+.twelve-about {
+  padding: 1em;
+  margin: 0 4em 0 4em;
+  width: 22em;
+}
+
+.twelve-about p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color: #C5C6C7;
+  margin: 0;
+}
+
+.twelve-buttons {
+  margin-left: 4em;
+}
+
+.card-twelve-btn {
+  border: 3px solid #FC7D22;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1.5em;
+  transition: 0.3s;
+  display: inline-block;
+  margin: 0.6em;
+}
+
+.card-twelve-btn:hover {
+  background: rgba(204, 204, 204, 0.3);
+}
+
+.card-twelve-btn-circle {
+  position: absolute;
+  right: 0.9em;
+  top: 3.2em;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #FC7D22;
+  font-size: 4em;
+  padding-top: 0.18em;
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card-twelve-btn-circle:hover {
+  background-color: #fff;
+  color: #FC7D22;
+  cursor: pointer;
+}
+
+.card-twelve-right {
+  width: 34.5em;
+  height: 50em;
+  z-index: 2;
+  top: -16em;
+  right: -7em;
+  transform: rotate(-34deg);
+  overflow: hidden;
+}
+
+.card-twelve-right-content {
+  background: url(../images/city.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: rotate(34deg);
+  width: 109%;
+  height: 80%;
+  position: absolute;
+  top: 5.6em;
+  left: -12em;
+}
+
+.card-left-open {
+  top: 6em;
+  left: -32em;
+}
+
+.card-right-open {
+  top: -21em;
+  right: -41em;
+}
+
+@media screen and (max-width: 930px) {
+  .card-twelve-container {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .card-twelve-container {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .card-twelve {
+    width: 35em;
+    height: 35em;
+  }
+
+  .card-twelve-left {
+    width: 35em;
+    height: 20em;
+    background-color: #1F2833;
+    transform: rotate(0deg);
+    top: 0;
+    left: 0;
+  }
+
+  .card-twelve-left-content {
+    width: 35em;
+    height: 20em;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+    text-align: center;
+    overflow-y: scroll;
+    padding-top: 1em;
+  }
+
+  .card-twelve-right {
+    width: 35em;
+    height: 20em;
+    transform: rotate(0deg);
+    top: 15em;
+    left: 0;
+  }
+
+  .card-twelve-right-content {
+    width: 35em;
+    height: 20em;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+
+  .card-twelve-btn-circle {
+    display: none;
+  }
+
+  .twelve-about,
+  .twelve-info,
+  .twelve-buttons {
+    margin: 0;
+  }
+
+  .twelve-about {
+    width: 100%;
+    padding: 1em 5em;
+  }
+
+  .card-twelve-middle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .card-twelve-container {
+    font-size: 11px;
+    width: 90%;
+  }
+
+  .card-twelve {
+    width: 100%;
+    margin: 0;
+  }
+
+  .card-twelve-left,
+  .card-twelve-left-content,
+  .card-twelve-right,
+  .card-twelve-right-content {
+    width: 100%;
+  }
+
+  .twelve-about {
+    padding: 1em 0.8em;
+  }
+}
+
+.card-eleven-container {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  font-size: 16px;/* The card size can be chaged simply by changing the font size to another value, the card will keep its aspect ratio and wont break, but the media queries should be modified at the bottom of the css file to keep the full responsivness of the card*/
+}
+
+/* Sizing everything in the card so it doesnt change size when padding is added */
+.card-eleven * {
+  box-sizing: border-box;
+}
+
+/* Styles for the card and shadow*/
+.card-eleven {
+  width: 23em;
+  height: 33em;
+  position: relative;
+  overflow: hidden;
+  margin: 1em;
+  -webkit-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* Profile name size and margin */
+.card-eleven h2 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 0.5rem;
+}
+
+/* left and right parts of the card sizing and centering text */
+.card-eleven-left,
+.card-eleven-right {
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  transition: 0.5s;
+}
+
+/* Adding background image to left part of the card and positioning*/
+.card-eleven-left {
+  background-image: url(../images/profile.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 23em;
+}
+
+/* Making the black overlay on background image */
+.card-eleven-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2.5em 1em;
+}
+
+/* Profile image size and border */
+.eleven-profile-img {
+  height: 11em;
+  width: 11em;
+  border: 2px solid #FC7D22;
+  border-radius: 50%;
+}
+
+/* paragraph below username color and margin */
+.card-eleven-left p {
+  color: #FC7D22;
+  margin: 0;
+}
+
+/* Two buttons in bottom left size and position */
+.eleven-buttons-left {
+  position: absolute;
+  bottom: 3em;
+  left: 0.6em;
+  width: 21.5em;
+  height: 7em;
+}
+
+/* Styles for buttons(border,padding...) */
+.card-eleven-btn {
+  border: 3px solid #FC7D22;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: 0.3s;
+  display: block;
+  margin: 0.6em;
+}
+
+/* Background for buttons when hovered over */
+.card-eleven-btn:hover {
+  background: rgba(204, 204, 204, 0.3);
+}
+
+/* Pagination positioning size and background */
+.eleven-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 3em;
+}
+
+/* Pagination circle size, background, margin... */
+.eleven-circle {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background-color: #C5C6C7;
+  display: inline-block;
+  margin: 0 0.5em;
+  cursor: pointer;
+  margin-top: 1.5em;
+}
+
+/* Right part of the card background and positioning */
+.card-eleven-right {
+  left: 23em;
+  top: 0;
+  width: 63em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* matgin,padding andsize for card right elements */
+.eleven-work,
+.eleven-about,
+.eleven-skills {
+  margin: 0;
+  padding: 0;
+  width: 23em;
+}
+
+/* background, padding, and positioning for card right element */
+.eleven-stats {
+  background: #1F2833;
+  padding: 1em 0.5em 3em 0.5em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 23em;
+}
+
+/* paragraph color in stats section */
+.eleven-stats p {
+  color: #C5C6C7;
+  font-size: 1.1em;
+  margin: 0 0 1em 0;
+}
+
+/* views, follwers and likes margin */
+.eleven-views,
+.eleven-followers,
+.eleven-likes {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+/* icon color and size */
+.eleven-icon {
+  color: #FC7D22;
+  font-size: 1.4em;
+}
+
+/* Skills section background and text color */
+.eleven-skills {
+  background-color: #0B0C10;
+  padding: 1em 0.5em;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+/* Making a grid for the skills */
+.eleven-skill {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+
+/* Full progress bar */
+.eleven-progress {
+  width: 14em;
+  height: 1.5em;
+  background: #C5C6C7;
+  display: inline-block;
+}
+
+/* Progress value */
+.eleven-progress-value {
+  background-color: #FC7D22;
+  height: 1.5em;
+}
+
+/* Adding percentage to every skill(how much the bar is filled) */
+.eleven-val-1 {width: 95%;}
+
+.eleven-val-2 {width: 90%;}
+
+.eleven-val-3 {width: 85%;}
+
+.eleven-val-4 {width: 90%;}
+
+.eleven-val-5 {width: 83%;}
+
+.eleven-val-6 {width: 95%;}
+
+/* About section padding and background */
+.eleven-about {
+  padding: 1em;
+  background: #1F2833;
+}
+
+/* About text size and color */
+.eleven-about p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #C5C6C7;
+}
+
+/* My work section padding and background */
+.eleven-work {
+  background: #0B0C10;
+  padding: 1em 1em 3em 1em;
+  overflow-y: scroll;
+}
+
+/* scrollbar width */
+.eleven-work::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+/* scrollbar track background color */
+.eleven-work::-webkit-scrollbar-track {
+  background: #cccccc;
+}
+
+/* Scrollbar thumb background color */
+.eleven-work::-webkit-scrollbar-thumb {
+  background: #FC7D22;
+}
+
+/* Styling for projec(border,centering,padding...) */
+.eleven-project {
+  width: 18em;
+  height: 13em;
+  border: #FC7D22 solid 2px;
+  margin: 1em auto;
+  text-align: left;
+  padding: 0.5rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Adding padding */
+.eleven-project .card-eleven-overlay {
+  padding: 1em;
+}
+
+/* Adding background when hovered over */
+.eleven-project:hover .card-eleven-overlay {
+  background-color: rgba(97, 97, 97, 0.8);
+  cursor: pointer;
+}
+
+/* Styling the paragraph in the project */
+.eleven-project p {
+  color: #C5C6C7;
+  margin: 0 0 1.5em 0;
+  text-align: center;
+}
+
+/* Aligning the project likes and vews to left and right */
+.eleven-project-likes {
+  float: left;
+}
+
+.eleven-project-views {
+  float: right;
+}
+
+/* Adding background images to project */
+.eleven-project-1 {
+  background: url(../images/project1.jpg);
+}
+
+.eleven-project-2 {
+  background: url(../images/project2.jpg);
+}
+
+.eleven-project-3 {
+  background: url(../images/project3.jpg);
+}
+
+/* Style when the pagination circle is pressed */
+.eleven-circle-active {
+  background-color: #FC7D22;
+}
+
+/* media queries can be added here, or you can modify these for the size of the card that has ben changed */
+
+/* The default font size is 16px and these two media queries will make it shrink from the 16px font size to 14px and 12px when the screen hits the size of 400px and 350px */
+
+/* But if the font size is changed to something other than the default 16px then the max width and card container font size values in the media query must be changed or another one must be aded to keep the cards responsiveness*/
+
+@media screen and (max-width: 400px) {
+  .card-eleven-container {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card-eleven-container {
+    font-size: 12px;
+  }
+}
